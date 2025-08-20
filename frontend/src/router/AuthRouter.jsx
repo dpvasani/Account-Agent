@@ -1,6 +1,8 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
 
 import Login from '@/pages/Login';
+import Register from '@/pages/Register';
+import Verify from '@/pages/Verify';
 import NotFound from '@/pages/NotFound';
 
 import ForgetPassword from '@/pages/ForgetPassword';
@@ -15,6 +17,8 @@ export default function AuthRouter() {
     <Routes>
       <Route element={<Login />} path="/" />
       <Route element={<Login />} path="/login" />
+      <Route element={<Register />} path="/register" />
+      <Route element={<Verify />} path="/verify/:userId/:emailToken" />
       <Route element={<Navigate to="/login" replace />} path="/logout" />
       <Route element={<ForgetPassword />} path="/forgetpassword" />
       <Route element={<ResetPassword />} path="/resetpassword/:userId/:resetToken" />
