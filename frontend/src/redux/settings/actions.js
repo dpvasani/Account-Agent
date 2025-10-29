@@ -115,17 +115,30 @@ export const settingsAction = {
         type: actionTypes.REQUEST_LOADING,
       });
 
-      let data = await request.listAll({ entity });
+      try {
+        let data = await request.listAll({ entity });
 
-      if (data.success === true) {
-        const payload = dispatchSettingsData(data.result);
-        window.localStorage.setItem('settings', JSON.stringify(dispatchSettingsData(data.result)));
+        if (data && data.success === true) {
+          const payload = dispatchSettingsData(data.result);
+          window.localStorage.setItem('settings', JSON.stringify(dispatchSettingsData(data.result)));
 
-        dispatch({
-          type: actionTypes.REQUEST_SUCCESS,
-          payload,
-        });
-      } else {
+          dispatch({
+            type: actionTypes.REQUEST_SUCCESS,
+            payload,
+          });
+        } else {
+          // If JWT expired or authentication failed, the errorHandler will redirect
+          // But we still need to handle the failed state
+          if (data && data.jwtExpired) {
+            // Don't dispatch failed, let the errorHandler handle the redirect
+            return;
+          }
+          dispatch({
+            type: actionTypes.REQUEST_FAILED,
+          });
+        }
+      } catch (error) {
+        console.error('Settings list error:', error);
         dispatch({
           type: actionTypes.REQUEST_FAILED,
         });

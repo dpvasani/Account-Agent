@@ -47,6 +47,12 @@ const errorHandler = (error) => {
     if (result || isLogout) {
       window.location.href = '/logout';
     }
+    return {
+      success: false,
+      result: null,
+      message: 'Session expired, please login again',
+      jwtExpired: true,
+    };
   }
 
   if (response && response.status) {
