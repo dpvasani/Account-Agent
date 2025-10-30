@@ -29,6 +29,21 @@ const Profile = lazy(() => import('@/pages/Profile'));
 
 const About = lazy(() => import('@/pages/About'));
 
+// New modules
+const People = lazy(() => import('@/pages/People'));
+const Company = lazy(() => import('@/pages/Company'));
+const Lead = lazy(() => import('@/pages/Lead'));
+const Product = lazy(() => import('@/pages/Product'));
+const ProductCategory = lazy(() => import('@/pages/ProductCategory'));
+const Order = lazy(() => import('@/pages/Order'));
+const Expense = lazy(() => import('@/pages/Expense'));
+const ExpenseCategory = lazy(() => import('@/pages/ExpenseCategory'));
+const Report = lazy(() => import('@/pages/Report'));
+const ApiKey = lazy(() => import('@/pages/ApiKey'));
+const Currency = lazy(() => import('@/pages/Currency'));
+const PublicForm = lazy(() => import('@/pages/PublicForm'));
+const Branch = lazy(() => import('@/pages/Branch'));
+
 let routes = {
   expense: [],
   default: [
@@ -122,6 +137,58 @@ let routes = {
     {
       path: '/profile',
       element: <Profile />,
+    },
+    {
+      path: '/people',
+      element: <People />,
+    },
+    {
+      path: '/company',
+      element: <Company />,
+    },
+    {
+      path: '/lead',
+      element: <Lead />,
+    },
+    {
+      path: '/product',
+      element: <Product />,
+    },
+    {
+      path: '/category/product',
+      element: <ProductCategory />,
+    },
+    {
+      path: '/order',
+      element: <Order />,
+    },
+    {
+      path: '/expense',
+      element: <Expense />,
+    },
+    {
+      path: '/category/expense',
+      element: <ExpenseCategory />,
+    },
+    {
+      path: '/report',
+      element: <Report />,
+    },
+    {
+      path: '/apikey',
+      element: <ApiKey />,
+    },
+    {
+      path: '/currency',
+      element: <Currency />,
+    },
+    {
+      path: '/publicform',
+      element: <PublicForm />,
+    },
+    {
+      path: '/branch',
+      element: <Branch />,
     },
     {
       path: '*',

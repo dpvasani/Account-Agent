@@ -26,6 +26,17 @@ import {
   FilterOutlined,
   WalletOutlined,
   ReconciliationOutlined,
+  TeamOutlined,
+  BankOutlined,
+  RocketOutlined,
+  ShoppingOutlined,
+  DollarOutlined,
+  BarChartOutlined,
+  KeyOutlined,
+  GlobalOutlined,
+  FormOutlined,
+  BranchesOutlined,
+  AppstoreOutlined,
 } from '@ant-design/icons';
 
 const { Sider } = Layout;
@@ -59,7 +70,21 @@ function Sidebar({ collapsible, isMobile = false }) {
       icon: <CustomerServiceOutlined />,
       label: <Link to={'/customer'}>{translate('customers')}</Link>,
     },
-
+    {
+      key: 'people',
+      icon: <TeamOutlined />,
+      label: <Link to={'/people'}>{translate('people')}</Link>,
+    },
+    {
+      key: 'company',
+      icon: <BankOutlined />,
+      label: <Link to={'/company'}>{translate('company')}</Link>,
+    },
+    {
+      key: 'lead',
+      icon: <RocketOutlined />,
+      label: <Link to={'/lead'}>{translate('lead')}</Link>,
+    },
     {
       key: 'invoice',
       icon: <ContainerOutlined />,
@@ -75,7 +100,36 @@ function Sidebar({ collapsible, isMobile = false }) {
       icon: <CreditCardOutlined />,
       label: <Link to={'/payment'}>{translate('payments')}</Link>,
     },
-
+    {
+      key: 'product',
+      icon: <ShoppingOutlined />,
+      label: <Link to={'/product'}>{translate('product')}</Link>,
+    },
+    {
+      key: 'productCategory',
+      icon: <AppstoreOutlined />,
+      label: <Link to={'/category/product'}>{translate('product_category')}</Link>,
+    },
+    {
+      key: 'order',
+      icon: <ShopOutlined />,
+      label: <Link to={'/order'}>{translate('order')}</Link>,
+    },
+    {
+      key: 'expense',
+      icon: <DollarOutlined />,
+      label: <Link to={'/expense'}>{translate('expense')}</Link>,
+    },
+    {
+      key: 'expenseCategory',
+      icon: <TagsOutlined />,
+      label: <Link to={'/category/expense'}>{translate('expense_category')}</Link>,
+    },
+    {
+      key: 'report',
+      icon: <BarChartOutlined />,
+      label: <Link to={'/report'}>{translate('report')}</Link>,
+    },
     {
       key: 'paymentMode',
       label: <Link to={'/payment/mode'}>{translate('payments_mode')}</Link>,
@@ -84,7 +138,27 @@ function Sidebar({ collapsible, isMobile = false }) {
     {
       key: 'taxes',
       label: <Link to={'/taxes'}>{translate('taxes')}</Link>,
-      icon: <ShopOutlined />,
+      icon: <TagOutlined />,
+    },
+    {
+      key: 'currency',
+      icon: <GlobalOutlined />,
+      label: <Link to={'/currency'}>{translate('currency')}</Link>,
+    },
+    {
+      key: 'apiKey',
+      icon: <KeyOutlined />,
+      label: <Link to={'/apikey'}>{translate('api_key')}</Link>,
+    },
+    {
+      key: 'publicForm',
+      icon: <FormOutlined />,
+      label: <Link to={'/publicform'}>{translate('public_form')}</Link>,
+    },
+    {
+      key: 'branch',
+      icon: <BranchesOutlined />,
+      label: <Link to={'/branch'}>{translate('branch')}</Link>,
     },
     {
       key: 'generalSettings',
